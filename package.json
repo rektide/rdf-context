@@ -1,0 +1,29 @@
+{
+	"name": "rdf-context",
+	"version": "1.0.0",
+	"description": "JSON-LD Context for the RDF `http://www.w3.org/1999/02/22-rdf-syntax-ns#`/'rdf' namespace.",
+	"main": "rdf-context.js",
+	"scripts": {
+		"download": "curl $(./@id.js) -o rdf-schema.rdf",
+		"build": "./.build.js > rdf-context.json; ./.build.js --prefixes > prefixes.json",
+		"prepublish": "npm run download; npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/rdf-context"
+	},
+	"keywords": [
+		"jsonld-context",
+		"rdf",
+		"JSON-LD",
+		"jsonld",
+		"context"
+	],
+	"author": "rektide de la faye",
+	"license": "X11",
+	"devDependencies": {
+		"rdf-parser-n3": "^0.3.0",
+		"rdf-serializer-jsonld": "^0.3.0"
+	}
+}
